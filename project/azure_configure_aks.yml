@@ -6,6 +6,7 @@
     location: eastus
     aks_name: myAKSCluster
     username: azureuser
+    count: 3
     ssh_key: "your_ssh_key"
     client_id: "your_client_id"
     client_secret: "your_client_secret"
@@ -24,5 +25,5 @@
           client_secret: "{{ client_secret }}"
         agent_pool_profiles:
           - name: default
-            count: 3
+            count: {{ count }} 
             vm_size: Standard_D2_v2
