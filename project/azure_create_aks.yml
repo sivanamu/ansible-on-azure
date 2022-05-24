@@ -6,7 +6,6 @@
     location: eastus
     aks_name: myAKSCluster
     username: azureuser
-    ssh_key: "your_ssh_key"
     aks_version: aks_version
   tasks:
   - name: Create resource group
@@ -23,6 +22,9 @@
       linux_profile:
         admin_username: "{{ username }}"
         ssh_key: "{{ ssh_key }}"
+      service_principal:
+        client_id: "{{ client_id }}"
+        client_secret: "{{ secret }}"
       agent_pool_profiles:
         - name: default
           count: 2
