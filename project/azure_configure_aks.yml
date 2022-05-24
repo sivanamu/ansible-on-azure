@@ -25,5 +25,5 @@
           client_secret: "{{ client_secret }}"
         agent_pool_profiles:
           - name: default
-            count: {{ count }} 
+            count: "{{ count }}"
             vm_size: Standard_D2_v2
