@@ -23,8 +23,8 @@
         admin_username: "{{ username }}"
         ssh_key: "{{ ssh_key }}"
       service_principal:
-        client_id: "{{ client_id }}"
-        client_secret: "{{ secret }}"
+        client_id: "{{ appId }}"
+        client_secret: "{{ password }}"
       agent_pool_profiles:
         - name: default
           count: 2
