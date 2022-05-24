@@ -33,3 +33,11 @@
           vm_size: Standard_D2_v2
       tags:
         Environment: Production
+
+  - name: Remove a managed Azure Container Services (AKS) instance
+    azure_rm_aks:
+      name: "{{ aks_name }}"
+      resource_group: "{{ resource_group }}" 
+      state: absent
+
+
