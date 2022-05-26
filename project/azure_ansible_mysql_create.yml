@@ -20,6 +20,7 @@
         admin_username: "{{ admin_username }}"
         admin_password: "{{ admin_password }}"
         storage_mb: 51200
+
     - name: Create instance of MySQL Database
       azure_rm_mysqldatabase:
         resource_group: "{{ resource_group }}"
@@ -40,23 +41,3 @@
           properties:
             startIpAddress: "0.0.0.0"
             endIpAddress: "255.255.255.255"
-
-    - name: Query MySQL Servers in current resource group
-      azure_rm_mysqlserver_facts:
-        resource_group: "{{ resource_group }}"
-      register: mysqlserverfacts
-
-    - name: Dump MySQL Server facts
-      debug:
-        var: mysqlserverfacts
-
-    - name: Query MySQL Databases
-      azure_rm_mysqldatabase_facts:
-        resource_group: "{{ resource_group }}"
-        server_name: "{{ mysqlserver_name }}"
-      register: mysqldatabasefacts
-
-    - name: Dump MySQL Database Facts
-      debug:
-        var: mysqldatabasefacts
-
