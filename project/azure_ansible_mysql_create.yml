@@ -22,7 +22,7 @@
         storage_mb: 51200
 
     - name: Create instance of MySQL Database
-      azure.azcollection.azure_rm_mysqlserver: 
+      azure_rm_mysqldatabase: 
         resource_group: "{{ resource_group }}"
         server_name: "{{ mysqlserver_name }}"
         name: "{{ mysqldb_name }}"
