@@ -3,7 +3,7 @@
   hosts: localhost
   tasks: 
     - 
-      azure_rm_mysqlserver_facts: 
+      azure.azcollection.azure_rm_mysqlserver_info: 
         resource_group: "{{ resource_group }}"
       name: "Query MySQL Servers in current resource group"
       register: mysqlserverfacts
@@ -12,7 +12,7 @@
         var: mysqlserverfacts
       name: "Dump MySQL Server facts"
     - 
-      azure_rm_mysqldatabase_facts: 
+      azure.azcollection.azure_rm_mysqlserver_info: 
         resource_group: "{{ resource_group }}"
         server_name: "{{ mysqlserver_name }}"
       name: "Query MySQL Databases"
