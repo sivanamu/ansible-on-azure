@@ -12,7 +12,7 @@
         var: mysqlserverfacts
       name: "Dump MySQL Server facts"
     - 
-      azure.azcollection.azure_rm_mysqlserver_info: 
+      azure.azcollection.azure_rm_mysqldatabase_info: 
         resource_group: "{{ resource_group }}"
         server_name: "{{ mysqlserver_name }}"
       name: "Query MySQL Databases"
