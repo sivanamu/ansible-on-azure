@@ -8,7 +8,7 @@
     admin_password: mysqladmin 
   tasks:
     - name: Create MySQL Server
-      azure_rm_mysqlserver:
+      azure.azcollection.azure_rm_mysqlserver: 
         resource_group: "{{ resource_group }}"
         name: "{{ mysqlserver_name }}"
         sku:
@@ -22,7 +22,7 @@
         storage_mb: 51200
 
     - name: Create instance of MySQL Database
-      azure_rm_mysqldatabase:
+      azure.azcollection.azure_rm_mysqlserver: 
         resource_group: "{{ resource_group }}"
         server_name: "{{ mysqlserver_name }}"
         name: "{{ mysqldb_name }}"
