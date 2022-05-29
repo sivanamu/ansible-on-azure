@@ -5,7 +5,7 @@
     mysqlserver_name: mysqlserveransible
     mysqldb_name: mysqldbansible
     admin_username: mysqladmin
-    admin_password: mysqladmin 
+    admin_password: 4da1sttymevaMU502MC 
   tasks:
     - name: Create MySQL Server
       azure.azcollection.azure_rm_mysqlserver: 
